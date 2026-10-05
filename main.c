@@ -8,10 +8,13 @@
 
 int main () {
     int n; // quanti numeri ci sono nella serie
-    int k; // variabile temporanea di lavoro che contiene l'ultima somma effettuata
-    int 
-    for (i=0;i<n;i++) {
-       
+    int somma=1; // variabile che contiene l'ultima somma effettuata
+    int k=1; // variabile che contiene il penultimo numero della serie
+
+    for (int i=0;i<n;i++) {
+        somma = somma + k;
+        k = somma;
+        printf(" %f ", somma);   
     }
-    
+    return 0;
 }
