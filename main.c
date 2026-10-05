@@ -8,13 +8,21 @@
 
 int main () {
     int n; // quanti numeri ci sono nella serie
-    int somma=1; // variabile che contiene l'ultima somma effettuata
-    int k=1; // variabile che contiene il penultimo numero della serie
+    int k1; // variabile che contiene l'ultimo numero della serie
+    int k2; // variabile che contiene il penultimo numero della serie
+    int somma; // somma fra l'ultimo numero e il precedente
 
-    for (int i=0;i<n;i++) {
-        somma = somma + k;
-        k = somma;
-        printf(" %f ", somma);   
+    n = 20; // numero di iterazioni arbitrario
+    k1 = 1; // il primo numero della serie e' 1
+    k2 = 0; // il primo "penultimo" numero della serie non esiste perche' si trova prima del primo, per cui metto 0 per non alterare la prima somma
+    somma = 1; // la somma della prima cella con la "prima" penultima cella sara' 1, e' fissa
+
+    for (int i = 0 ; i < n ; i++) {
+        printf(" %i ", somma);
+        somma = k1 + k2;
+        k2 = k1;
+        k1 = somma;  
     }
+    
     return 0;
 }
